@@ -11,11 +11,10 @@ public class GameController : ControllerBase
 		_gameService = gameService;
 	}
 
-	// Метод для получения случайной игры
 	[HttpGet("random")]
-	public async Task<IActionResult> GetRandomGameAsync()
+	public async Task<IActionResult> GetRandomGameAsync([FromQuery] int? storeId)
 	{
-		var game = await _gameService.GetRandomGameAsync();
+		var game = await _gameService.GetRandomGameAsync(storeId);
 
 		if (game == null)
 		{
@@ -23,5 +22,23 @@ public class GameController : ControllerBase
 		}
 
 		return Ok(game);
+	}
+
+
+	[HttpGet("stores")]
+	public async Task<IActionResult> GetStoresAsync()
+	{
+		var stores = await _gameService.GetStoresAsync();
+
+		if (stores != null && stores.Any())
+		{
+			// Если магазины найдены, возвращаем их
+			return Ok(stores);
+		}
+		else
+		{
+			// Если магазины не найдены, возвращаем сообщение
+			return NotFound("No stores found.");
+		}
 	}
 }

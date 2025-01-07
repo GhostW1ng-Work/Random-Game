@@ -1,7 +1,9 @@
-﻿namespace RandomGame.Models
+﻿using System.Text.Json.Serialization;
+
+namespace RandomGame.Models
 {
 	public class Platform
 	{
-		public PlatformDetail PlatformDetail { get; set; }
-	}
+        public string Name { get; set; }
+    }
 }

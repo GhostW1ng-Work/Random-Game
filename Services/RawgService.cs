@@ -13,29 +13,79 @@ public class RawgService
 	}
 
 	// Метод для получения случайной игры
-	public async Task<GameResult> GetRandomGameAsync()
+	public async Task<GameResult> GetRandomGameAsync(int? storeId = null)
 	{
 		string apiKey = _configuration["RawgApiKey"];
 		Random random = new Random();
-		int randomPage = random.Next(1, 100); // Генерация случайного номера страницы
+		string storeFilter = storeId.HasValue ? $"&stores={storeId}" : "";
 
-		string url = $"https://api.rawg.io/api/games?key={apiKey}&page_size=1&page={randomPage}"; // Запрос на случайную страницу
+		while (true)
+		{
+			int randomPage = random.Next(1, 1000); // Случайная страница
+			string url = $"https://api.rawg.io/api/games?key={apiKey}&page_size=20&page={randomPage}{storeFilter}";
+
+			Console.WriteLine($"Generated URL: {url}");
+
+			try
+			{
+				var response = await _httpClient.GetStringAsync(url);
+				var gamesResponse = JsonSerializer.Deserialize<GamesResponse>(response, new JsonSerializerOptions
+				{
+					PropertyNameCaseInsensitive = true
+				});
+
+				if (gamesResponse?.Results != null && gamesResponse.Results.Any())
+				{
+					// Если найдены игры, выбираем случайную
+					int randomIndex = random.Next(0, gamesResponse.Results.Count);
+					return gamesResponse.Results[randomIndex];
+				}
+
+				Console.WriteLine("No games found in the response. Retrying...");
+			}
+			catch (HttpRequestException httpEx)
+			{
+				Console.WriteLine($"HTTP Request error: {httpEx.Message}. Retrying...");
+			}
+			catch (JsonException jsonEx)
+			{
+				Console.WriteLine($"Deserialization error: {jsonEx.Message}. Retrying...");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Unexpected error: {ex.Message}. Retrying...");
+			}
+
+			// Цикл будет продолжаться, пока не будет найден результат
+		}
+	}
+
+
+
+
+
+	public async Task<List<Store>> GetStoresAsync()
+	{
+		string apiKey = _configuration["RawgApiKey"];
+		Random random = new Random();
+
+		string url = $"https://api.rawg.io/api/stores?key={apiKey}"; // Запрос на страницу с 20 магазинами
 		var response = await _httpClient.GetStringAsync(url);
 
 		try
 		{
-			var gamesResponse = JsonSerializer.Deserialize<GamesResponse>(response, new JsonSerializerOptions
+			// Десериализация данных о магазинах
+			var storesResponse = JsonSerializer.Deserialize<StoresResponse>(response, new JsonSerializerOptions
 			{
 				PropertyNameCaseInsensitive = true
 			});
 
-			if (gamesResponse?.Results == null || !gamesResponse.Results.Any())
+			if (storesResponse?.Results == null || !storesResponse.Results.Any())
 			{
-				return null;
+				return null; // Если магазины не найдены
 			}
 
-			// Возвращаем первую игру из полученных результатов
-			return gamesResponse.Results.First();
+			return storesResponse.Results; // Возвращаем список магазинов
 		}
 		catch (JsonException jsonEx)
 		{
@@ -43,4 +93,5 @@ public class RawgService
 			return null;
 		}
 	}
+
 }

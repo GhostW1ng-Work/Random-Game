@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\RandomGame.sln",
+  "SelectedNode": "\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
