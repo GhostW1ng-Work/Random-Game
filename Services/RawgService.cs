@@ -13,16 +13,17 @@ public class RawgService
 	}
 
 	// Метод для получения случайной игры
-	public async Task<GameResult> GetRandomGameAsync(int? storeId = null)
+	public async Task<GameResult> GetRandomGameAsync(int? storeId = null, int? platformId = null)
 	{
 		string apiKey = _configuration["RawgApiKey"];
 		Random random = new Random();
 		string storeFilter = storeId.HasValue ? $"&stores={storeId}" : "";
+		string platformFilter = platformId.HasValue ? $"&platforms={platformId}" : "";
 
 		while (true)
 		{
-			int randomPage = random.Next(1, 1000); // Случайная страница
-			string url = $"https://api.rawg.io/api/games?key={apiKey}&page_size=20&page={randomPage}{storeFilter}";
+			int randomPage = random.Next(1, 1000);
+			string url = $"https://api.rawg.io/api/games?key={apiKey}&page_size=20&page={randomPage}{storeFilter}{platformFilter}";
 
 			Console.WriteLine($"Generated URL: {url}");
 
@@ -36,30 +37,47 @@ public class RawgService
 
 				if (gamesResponse?.Results != null && gamesResponse.Results.Any())
 				{
-					// Если найдены игры, выбираем случайную
 					int randomIndex = random.Next(0, gamesResponse.Results.Count);
 					return gamesResponse.Results[randomIndex];
 				}
 
 				Console.WriteLine("No games found in the response. Retrying...");
 			}
-			catch (HttpRequestException httpEx)
+			catch
 			{
-				Console.WriteLine($"HTTP Request error: {httpEx.Message}. Retrying...");
+				Console.WriteLine("Error occurred while fetching game. Retrying...");
 			}
-			catch (JsonException jsonEx)
-			{
-				Console.WriteLine($"Deserialization error: {jsonEx.Message}. Retrying...");
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"Unexpected error: {ex.Message}. Retrying...");
-			}
-
-			// Цикл будет продолжаться, пока не будет найден результат
 		}
 	}
 
+
+
+	public async Task<List<Platform>> GetPlatformsAsync()
+	{
+		string apiKey = _configuration["RawgApiKey"];
+		string url = $"https://api.rawg.io/api/platforms?key={apiKey}";
+		var response = await _httpClient.GetStringAsync(url);
+
+		try
+		{
+			var platformsResponse = JsonSerializer.Deserialize<PlatformsResponse>(response, new JsonSerializerOptions
+			{
+				PropertyNameCaseInsensitive = true
+			});
+
+			if (platformsResponse?.Results == null || !platformsResponse.Results.Any())
+			{
+				return null;
+			}
+
+			return platformsResponse.Results;
+		}
+		catch (JsonException jsonEx)
+		{
+			Console.WriteLine($"Deserialization error: {jsonEx.Message}");
+			return null;
+		}
+	}
 
 
 

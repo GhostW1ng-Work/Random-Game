@@ -4,25 +4,38 @@ import axios from 'axios';
 const RandomGame = () => {
     const [game, setGame] = useState(null);
     const [error, setError] = useState(null);
-    const [stores, setStores] = useState([]); // Состояние для всех магазинов
-    const [selectedStore, setSelectedStore] = useState(''); // Состояние для выбранного магазина
+    const [platforms, setPlatforms] = useState([]);
+    const [selectedPlatform, setSelectedPlatform] = useState('');
 
-    // Получение списка всех магазинов
-    const getStores = async () => {
+    const getPlatforms = async () => {
         try {
-            const response = await axios.get('https://localhost:7177/api/Game/stores');
-            setStores(response.data); // Сохраняем список магазинов
+            const response = await axios.get('https://localhost:7177/api/Game/platforms');
+            setPlatforms(response.data);
         } catch (error) {
-            setError('Failed to load stores.');
+            setError('Failed to load platforms.');
         }
     };
 
-    // Получить случайную игру
+    const handlePlatformChange = (event) => {
+        setSelectedPlatform(event.target.value);
+    };
+
+    const renderPlatforms = (platforms) => {
+        if (!platforms || platforms.length === 0) {
+            return <option value="">No platforms available</option>;
+        }
+        return platforms.map((platform) => (
+            <option key={platform.id} value={platform.id}>
+                {platform.name}
+            </option>
+        ));
+    };
+
     const getRandomGame = async () => {
         try {
             const response = await axios.get('https://localhost:7177/api/Game/random', {
                 params: {
-                    storeId: selectedStore || undefined, // Передаем storeId, если он выбран
+                    platformId: selectedPlatform || undefined,
                 },
             });
             setGame(response.data);
@@ -33,18 +46,10 @@ const RandomGame = () => {
         }
     };
 
-
-
-    // Обработчик изменения выбранного магазина
-    const handleStoreChange = (event) => {
-        setSelectedStore(event.target.value);
-    };
-
     useEffect(() => {
-        getStores(); // При монтировании компонента, вызываем getStores для загрузки всех магазинов
+        getPlatforms();
     }, []);
 
-    // Построить полный URL для изображения
     const getImageUrl = (imagePath) => {
         if (!imagePath) {
             return 'https://via.placeholder.com/600x400?text=No+Image';
@@ -54,50 +59,33 @@ const RandomGame = () => {
             : `https://media.rawg.io/media/games/${imagePath}`;
     };
 
-    // Список платформ
-    const renderPlatforms = (platforms) =>
+    const renderPlatformsGame = (platforms) =>
         platforms?.map((item) => item.platform?.name).filter((name) => name).join(', ') || 'N/A';
 
-    // Список жанров
     const renderGenres = (genres) =>
         genres?.map((genre) => genre.name).join(', ') || 'N/A';
 
-    // Список тегов
     const renderTags = (tags) =>
         tags?.map((tag) => tag.name).join(', ') || 'N/A';
 
-    // Отображение магазинов с ссылками
-    const renderStores = (stores) => {
-        if (!stores || stores.length === 0) {
-            return <option value="">No stores available</option>; // Если нет магазинов, выводим это в select
-        }
-        return stores.map((store) => (
-            <option key={store.id} value={store.id}>
-                {store.name}
-            </option>
-        ));
-    };
-
-    const renderGameStores = (stores) =>
-        stores?.map((item) => {
-            const store = item.store;
-            return store && store.domain ? (
-                <a
-                    key={store.id}
-                    href={`https://${store.domain}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link p-0"
-                >
-                    {store.name}
-                </a>
-            ) : null;
-        }) || 'N/A';
-
     return (
-        <div className="container">
-            <div className="row justify-content-center my-5">
-                <div className="col-12 col-md-8 col-lg-6 text-center">
+        <div className="container-fluid">
+            <div className="row vh-100">
+                {/* Боковая панель для выбора платформы */}
+                <div className="col-3 d-flex flex-column align-items-start p-4 bg-light">
+                    <h4 className="mb-3 text-primary">Select a Platform:</h4>
+                    <select
+                        className="form-select"
+                        value={selectedPlatform}
+                        onChange={handlePlatformChange}
+                    >
+                        <option value="">-- Select Platform --</option>
+                        {renderPlatforms(platforms)}
+                    </select>
+                </div>
+
+                {/* Основная часть */}
+                <div className="col-9 d-flex flex-column justify-content-center align-items-center">
                     <h1 className="mb-4 text-primary">Random Game Picker</h1>
                     <button
                         className="btn btn-lg btn-dark mb-4"
@@ -106,23 +94,10 @@ const RandomGame = () => {
                         Get Random Game
                     </button>
 
-                    {/* Выпадающий список магазинов */}
-                    <div className="mt-5">
-                        <h4>Select a Store:</h4>
-                        <select
-                            className="form-select"
-                            value={selectedStore}
-                            onChange={handleStoreChange}
-                        >
-                            <option value="">-- Select Store --</option>
-                            {renderStores(stores)} {/* Показываем магазины игры или всех магазинов */}
-                        </select>
-                    </div>
-
                     {error && <p className="text-danger">{error}</p>}
 
                     {game && (
-                        <div className="card shadow-lg border-light rounded">
+                        <div className="card shadow-lg border-light rounded" style={{ width: '100%', maxWidth: '600px' }}>
                             <img
                                 className="card-img-top"
                                 src={getImageUrl(game.background_image)}
@@ -139,7 +114,7 @@ const RandomGame = () => {
                                     <strong>Released:</strong> {game.released || 'N/A'}
                                 </p>
                                 <p className="card-text">
-                                    <strong>Platforms:</strong> {renderPlatforms(game.platforms)}
+                                    <strong>Platforms:</strong> {renderPlatformsGame(game.platforms)}
                                 </p>
                                 <p className="card-text">
                                     <strong>Genres:</strong> {renderGenres(game.genres)}
@@ -148,13 +123,18 @@ const RandomGame = () => {
                                     <strong>Tags:</strong> {renderTags(game.tags)}
                                 </p>
                                 <p className="card-text">
-                                    <strong>ESRB Rating:</strong> {game.esrb_rating?.name || 'N/A'}
-                                </p>
-                                <p className="card-text">
-                                    <strong>Stores:</strong> {renderGameStores(game.stores)}
-                                </p>
-                                <p className="card-text">
-                                    <strong>Playtime:</strong> {game.playtime || 'N/A'} hours
+                                    <strong>Stores:</strong>{' '}
+                                    {game.stores?.map((item) => (
+                                        <a
+                                            key={item.store.id}
+                                            href={`https://${item.store.domain}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-link p-0"
+                                        >
+                                            {item.store.name}
+                                        </a>
+                                    )) || 'N/A'}
                                 </p>
                             </div>
                         </div>
