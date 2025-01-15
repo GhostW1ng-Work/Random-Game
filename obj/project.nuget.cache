@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bvdJ/5V16UrEcTxT9ELjuok/rYbMIXK4Bza/jE/VEutFRmmV/KOaKYsJpDZ1/J0bsJQa7lEhDhCf4Y4e1Kq/ww==",
+  "dgSpecHash": "HC6MfSdbbHw=",
   "success": true,
-  "projectFilePath": "C:\\Web\\Random-Game\\RandomGame.csproj",
+  "projectFilePath": "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\workj\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\workj\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

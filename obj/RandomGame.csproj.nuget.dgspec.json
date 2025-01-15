@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Web\\Random-Game\\RandomGame.csproj": {}
+    "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj": {}
   },
   "projects": {
-    "C:\\Web\\Random-Game\\RandomGame.csproj": {
+    "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Web\\Random-Game\\RandomGame.csproj",
+        "projectUniqueName": "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj",
         "projectName": "RandomGame",
-        "projectPath": "C:\\Web\\Random-Game\\RandomGame.csproj",
+        "projectPath": "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj",
         "packagesPath": "C:\\Users\\workj\\.nuget\\packages\\",
-        "outputPath": "C:\\Web\\Random-Game\\obj\\",
+        "outputPath": "C:\\Users\\workj\\Source\\Repos\\Random-Game\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\workj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -83,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
