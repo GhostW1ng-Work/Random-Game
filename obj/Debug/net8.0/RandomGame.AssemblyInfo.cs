@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RandomGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3cde58676ef73c25f94c73208bd6f082a8c155db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3385b95118a4eaf7ff0da70ea1b26ee40a1ec8f")]
 [assembly: System.Reflection.AssemblyProductAttribute("RandomGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RandomGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
