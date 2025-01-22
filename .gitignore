@@ -1,0 +1,6 @@
+# Ignore Visual Studio build artifacts
+bin/
+obj/
+*.dll
+*.pdb
+*.sourcelink.json
