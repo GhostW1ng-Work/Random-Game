@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj": {}
+    "/home/ghostw1ng/Random-Game/RandomGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj": {
+    "/home/ghostw1ng/Random-Game/RandomGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj",
+        "projectUniqueName": "/home/ghostw1ng/Random-Game/RandomGame.csproj",
         "projectName": "RandomGame",
-        "projectPath": "C:\\Users\\workj\\Source\\Repos\\Random-Game\\RandomGame.csproj",
-        "packagesPath": "C:\\Users\\workj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\workj\\Source\\Repos\\Random-Game\\obj\\",
+        "projectPath": "/home/ghostw1ng/Random-Game/RandomGame.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/home/ghostw1ng/Random-Game/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\workj\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -88,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
