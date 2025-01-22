@@ -9,7 +9,7 @@ const RandomGame = () => {
 
     const getPlatforms = async () => {
         try {
-            const response = await axios.get('https://localhost:5167/api/Game/platforms');
+            const response = await axios.get('https://localhost:5000/api/Game/platforms');
             setPlatforms(response.data);
         } catch (error) {
             setError('Failed to load platforms.');
@@ -33,7 +33,7 @@ const RandomGame = () => {
 
     const getRandomGame = async () => {
         try {
-            const response = await axios.get('https://localhost:5167/api/Game/random', {
+            const response = await axios.get('https://localhost:5000/api/Game/random', {
                 params: {
                     platformId: selectedPlatform || undefined,
                 },
