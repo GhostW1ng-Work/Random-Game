@@ -18,7 +18,7 @@ services:
     ports:
       - "8081:80"
     environment:
-      - REACT_APP_API_BASE_URL=http://backend:80
+      - REACT_APP_API_BASE_URL=http://random-game-backend-1:80
     networks:
       - app-network
 
