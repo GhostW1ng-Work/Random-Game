@@ -11,6 +11,7 @@ const RandomGame = () => {
 
     const getPlatforms = async () => {
         try {
+            console.log(`Sending request to: ${API_BASE_URL}/api/Game/platforms`);
             const response = await axios.get(`${API_BASE_URL}/api/Game/platforms`);
             setPlatforms(response.data);
         } catch (error) {
@@ -35,6 +36,7 @@ const RandomGame = () => {
 
     const getRandomGame = async () => {
         try {
+            console.log(`Sending request to: ${API_BASE_URL}/api/Game/random with platformId=${selectedPlatform || 'undefined'}`);
             const response = await axios.get(`${API_BASE_URL}/api/Game/random`, {
                 params: {
                     platformId: selectedPlatform || undefined,
