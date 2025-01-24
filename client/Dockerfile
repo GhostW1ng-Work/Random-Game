@@ -1,12 +1,13 @@
-# Используем образ Node.js для сборки
-FROM node:18 as build
+FROM node:16 AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+# Передаем переменную окружения при сборке
+ARG REACT_APP_API_BASE_URL=http://backend:80
+ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
 RUN npm run build
 
-# Используем Nginx для сервинга статических файлов
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80

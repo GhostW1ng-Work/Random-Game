@@ -1,22 +1,23 @@
-version: "3.8"
+version: '3.8'
+
 services:
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./backend
     ports:
-      - "5000:5000"
+      - "80:80"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - DOTNET_URLS=http://+:80
     networks:
       - app-network
 
   frontend:
     build:
-      context: ./client
-      dockerfile: Dockerfile
+      context: ./frontend
     ports:
-      - "80:80"
+      - "3000:80"
+    environment:
+      - REACT_APP_API_BASE_URL=http://backend:80
     networks:
       - app-network
 

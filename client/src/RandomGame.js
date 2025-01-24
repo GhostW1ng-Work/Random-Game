@@ -1,6 +1,8 @@
 ﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+
 const RandomGame = () => {
     const [game, setGame] = useState(null);
     const [error, setError] = useState(null);
@@ -9,7 +11,7 @@ const RandomGame = () => {
 
     const getPlatforms = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/Game/platforms');
+            const response = await axios.get(`${API_BASE_URL}/api/Game/platforms`);
             setPlatforms(response.data);
         } catch (error) {
             setError('Failed to load platforms.');
@@ -33,7 +35,7 @@ const RandomGame = () => {
 
     const getRandomGame = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/Game/random', {
+            const response = await axios.get(`${API_BASE_URL}/api/Game/random`, {
                 params: {
                     platformId: selectedPlatform || undefined,
                 },
