@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\workj\\source\\repos\\Random-Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\client\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:client\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\client\\src\\randomgame.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:client\\src\\randomgame.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\client\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:client\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|c:\\users\\workj\\source\\repos\\random-game\\client\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{7353D120-DF68-4DA1-BB11-6E47DD84B9E0}|RandomGame.csproj|solutionrelative:client\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,92 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": ".env",
               "DocumentMoniker": "C:\\Users\\workj\\source\\repos\\Random-Game\\client\\.env",
               "RelativeDocumentMoniker": "client\\.env",
               "ToolTip": "C:\\Users\\workj\\source\\repos\\Random-Game\\client\\.env",
               "RelativeToolTip": "client\\.env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-24T15:29:47.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\workj\\source\\repos\\Random-Game\\client\\Dockerfile",
-              "RelativeDocumentMoniker": "client\\Dockerfile",
-              "ToolTip": "C:\\Users\\workj\\source\\repos\\Random-Game\\client\\Dockerfile",
-              "RelativeToolTip": "client\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-22T17:12:19.64Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\workj\\source\\repos\\Random-Game\\Dockerfile",
-              "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\Users\\workj\\source\\repos\\Random-Game\\Dockerfile",
-              "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-22T16:16:19.54Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\workj\\source\\repos\\Random-Game\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\workj\\source\\repos\\Random-Game\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-01-22T16:16:17.392Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\workj\\source\\repos\\Random-Game\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\workj\\source\\repos\\Random-Game\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-22T16:12:37.619Z"
+              "WhenOpened": "2025-01-22T16:12:37.619Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\workj\\source\\repos\\Random-Game\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\workj\\source\\repos\\Random-Game\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T16:09:36.159Z"
+              "WhenOpened": "2025-01-22T16:09:36.159Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RandomGame.js",
               "DocumentMoniker": "C:\\Users\\workj\\source\\repos\\Random-Game\\client\\src\\RandomGame.js",
               "RelativeDocumentMoniker": "client\\src\\RandomGame.js",
               "ToolTip": "C:\\Users\\workj\\source\\repos\\Random-Game\\client\\src\\RandomGame.js",
               "RelativeToolTip": "client\\src\\RandomGame.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-20T15:33:37.327Z"
+              "WhenOpened": "2025-01-20T15:33:37.327Z",
+              "EditorCaption": ""
             }
           ]
         }
